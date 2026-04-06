@@ -171,11 +171,21 @@ function CopyDrawer({ idea, onClose }){
 
 /* ── Default demo ideas ── */
 const DEFAULT_IDEAS = [
-  { id:1,title:"RushBrew 2.0 — Campus Expansion",tag:"Business",status:"In Progress",locked:false,created:Date.now()-86400000*3,
-    sections:{ spark:"Deploy multiple RushBrew kiosks across Ahmedabad and Surat college campuses as a franchise model.",problem:"Students and gym-goers have no access to quality pre-workout drinks on demand. Vending machines only sell junk.",vision:"20 machines across Gujarat by end of 2026. N-One branded kiosks in every major college campus.",questions:"Minimum order qty for powder mix supplier? FSSAI license per machine location?",resources:"",nextstep:"" }
+  {
+  id: 1,
+  title: "Welcome to Temus — try me",
+  tag: "Side project",
+  status: "Raw Idea",
+  locked: false,
+  created: Date.now(),
+  sections: {
+    spark: "Temus is your idea blueprinting space. Before you prompt an AI or write a line of code — plan it here. This is a demo blueprint. Edit anything you see.",
+    problem: "Most people open ChatGPT with a vague idea and build the wrong thing. There is no thinking layer between inspiration and execution.",
+    vision: "A world where builders slow down for 10 minutes before spending 10 days building the wrong thing. Every great product starts with a clear blueprint.",
+    questions: "Try filling this section with your own open questions. What do you not know about your idea yet? What are the risks?",
+    resources: "Write what you have and what you need here. Time, money, skills, people. Be brutally honest.",
+    nextstep: "Create a new blueprint using the + new button in the top left. Give it a tag — Business, Product, or Side project — then hit Copy to AI when done.",
   },
-  { id:2,title:"TenderPilot — AI tender finder",tag:"Side project",status:"Raw Idea",locked:false,created:Date.now()-86400000,
-    sections:{ spark:"A web app where D and C class contractors type what work they do and get a daily digest of matching government tenders.",problem:"",vision:"",questions:"",resources:"",nextstep:"" }
   },
 ];
 
