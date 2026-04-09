@@ -1,4 +1,4 @@
-name: Build Temus
+name: Build Tamus
 
 on:
   push:
@@ -37,7 +37,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: Temus-${{ matrix.os }}
+          name: Tamus-${{ matrix.os }}
           path: |
             release/*.dmg
             release/*.exe

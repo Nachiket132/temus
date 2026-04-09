@@ -1,4 +1,4 @@
-# Temus
+# Tamus
 
 > Sit. Think. Then build.
 
@@ -28,8 +28,8 @@ Prebuilt binaries are attached to each [GitHub Release](../../releases) automati
 
 ## Run locally
 
-    git clone https://github.com/nachiketp/temus
-    cd temus
+    git clone https://github.com/nachiketp/tamus
+    cd tamus
     npm install
     npm run electron:dev
 
@@ -60,7 +60,7 @@ React · Vite · Electron · localStorage
 
 ## Philosophy
 
-In a world where AI pushes everyone into instant action mode — Temus is the pause.
+In a world where AI pushes everyone into instant action mode — Tamus is the pause.
 The blueprint before the build. The thinking before the prompting.
 
 ## License

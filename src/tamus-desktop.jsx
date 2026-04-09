@@ -72,7 +72,7 @@ function buildPrompt(idea){
   const sids = cfg.s;
   const vals = sids.filter(s=>idea.sections[s]?.trim()).map(s=>`[${SECS[s].label.toUpperCase()}]\n${idea.sections[s]}`).join("\n\n");
   if(!vals) return "";
-  const header = `TEMUS BLUEPRINT — ${idea.title}\n${"─".repeat(40)}\n\n${vals}\n\n${"─".repeat(40)}\n`;
+  const header = `TAMUS BLUEPRINT — ${idea.title}\n${"─".repeat(40)}\n\n${vals}\n\n${"─".repeat(40)}\n`;
   const tasks = {
     "Business": `Based on this blueprint, write a full business plan:\n1. Executive Summary\n2. Market Opportunity\n3. Revenue Model & Pricing\n4. Competitive Landscape\n5. Go-To-Market Strategy\n6. Key Risks\n7. 90-day Milestones`,
     "Product": `Based on this blueprint, research and write:\n1. Market Size (TAM/SAM/SOM)\n2. Top 5 competitors — name them, strengths & weaknesses\n3. Feature gap this product fills\n4. Pricing benchmarks\n5. Technical feasibility\n6. Ruthless MVP scope`,
@@ -173,13 +173,13 @@ function CopyDrawer({ idea, onClose }){
 const DEFAULT_IDEAS = [
   {
   id: 1,
-  title: "Welcome to Temus — try me",
+  title: "Welcome to Tamus — try me",
   tag: "Side project",
   status: "Raw Idea",
   locked: false,
   created: Date.now(),
   sections: {
-    spark: "Temus is your idea blueprinting space. Before you prompt an AI or write a line of code — plan it here. This is a demo blueprint. Edit anything you see.",
+    spark: "Tamus is your idea blueprinting space. Before you prompt an AI or write a line of code — plan it here. This is a demo blueprint. Edit anything you see.",
     problem: "Most people open ChatGPT with a vague idea and build the wrong thing. There is no thinking layer between inspiration and execution.",
     vision: "A world where builders slow down for 10 minutes before spending 10 days building the wrong thing. Every great product starts with a clear blueprint.",
     questions: "Try filling this section with your own open questions. What do you not know about your idea yet? What are the risks?",
@@ -190,17 +190,17 @@ const DEFAULT_IDEAS = [
 ];
 
 /* ── Main App ── */
-export default function Temus(){
+export default function Tamus(){
   const [ideas,setIdeas]=useState(()=>{
     try {
-      const saved=localStorage.getItem("temus_blueprints");
+      const saved=localStorage.getItem("tamus_blueprints");
       if(saved) return JSON.parse(saved);
     } catch(e){}
     return DEFAULT_IDEAS;
   });
   const [sel,setSel]=useState(()=>{
     try {
-      const saved=localStorage.getItem("temus_last_sel");
+      const saved=localStorage.getItem("tamus_last_sel");
       if(saved) return JSON.parse(saved);
     } catch(e){}
     return 1;
@@ -215,12 +215,12 @@ export default function Temus(){
 
   // Persist ideas to localStorage on every change
   useEffect(()=>{
-    localStorage.setItem("temus_blueprints",JSON.stringify(ideas));
+    localStorage.setItem("tamus_blueprints",JSON.stringify(ideas));
   },[ideas]);
 
   // Persist selected blueprint id
   useEffect(()=>{
-    localStorage.setItem("temus_last_sel",JSON.stringify(sel));
+    localStorage.setItem("tamus_last_sel",JSON.stringify(sel));
   },[sel]);
 
   const idea=ideas.find(i=>i.id===sel)||ideas[0];
@@ -304,7 +304,7 @@ export default function Temus(){
         <div style={{ width:70 }}/>
         {/* Window title */}
         <div style={{ position:"absolute",left:"50%",transform:"translateX(-50%)",display:"flex",alignItems:"center",gap:8 }}>
-          <span style={{ fontSize:11,color:C.amber,fontWeight:500,letterSpacing:"0.06em" }}>TEMUS</span>
+          <span style={{ fontSize:11,color:C.amber,fontWeight:500,letterSpacing:"0.06em" }}>TAMUS</span>
           <span style={{ color:C.faint,fontSize:11 }}>·</span>
           {idea.locked&&<span style={{ color:C.amber,fontSize:11 }}>◈</span>}
           <span style={{ fontSize:11,color:C.muted,maxWidth:200,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap" }}>
@@ -617,7 +617,7 @@ export default function Temus(){
       <div style={{ height:24,background:C.bar,borderTop:`1px solid ${C.border}`,display:"flex",alignItems:"center",padding:"0 14px",gap:16,flexShrink:0,position:"relative" }}>
         {/* Faint amber top gradient line */}
         <div style={{ position:"absolute",top:0,left:0,right:0,height:1,background:`linear-gradient(90deg,transparent,${C.amber}1a,transparent)` }}/>
-        <span style={{ fontSize:8,color:C.amberDim,letterSpacing:"0.1em" }}>TEMUS</span>
+        <span style={{ fontSize:8,color:C.amberDim,letterSpacing:"0.1em" }}>TAMUS</span>
         <span style={{ fontSize:8,color:C.faint }}>·</span>
         <span style={{ fontSize:8,color:STATUS_C[idea.status]||C.muted,letterSpacing:"0.06em" }}>{idea.status}</span>
         {idea.tag&&<><span style={{ fontSize:8,color:C.faint }}>·</span><span style={{ fontSize:8,color:cfg.c }}>{idea.tag}</span></>}

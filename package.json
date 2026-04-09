@@ -1,5 +1,5 @@
 {
-  "name": "temus",
+  "name": "tamus",
   "version": "1.0.0",
   "description": "Blueprint your ideas before you build — the thinking layer before AI",
   "main": "src-electron/main.js",
@@ -15,8 +15,8 @@
     "electron:build:all": "vite build && electron-builder --mac --win --linux"
   },
   "build": {
-    "appId": "com.nonedesign.temus",
-    "productName": "Temus",
+    "appId": "com.nonedesign.tamus",
+    "productName": "Tamus",
     "mac": {
       "category": "public.app-category.productivity",
       "target": "dmg"
